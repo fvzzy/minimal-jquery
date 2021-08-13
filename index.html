@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
+    <link href="./styles.css" rel="stylesheet" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+      integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI="
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="./image-slider.js"></script>
+    <title>Minimal jQuery Example</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="slider-wrap">
+        <ul id="slider">
+          <li data-color="#1abc9c">
+            <div>
+              <h3>Slide #1</h3>
+              <span>Sub-title #1</span>
+            </div>
+            <i class="fa fa-image"></i>
+          </li>
+          <li data-color="#3498db">
+            <div>
+              <h3>Slide #2</h3>
+              <span>Sub-title #2</span>
+            </div>
+            <i class="fa fa-gears"></i>
+          </li>
+          <li data-color="#9b59b6">
+            <div>
+              <h3>Slide #3</h3>
+              <span>Sub-title #3</span>
+            </div>
+            <i class="fa fa-sliders"></i>
+          </li>
+          <li data-color="#34495e">
+            <div>
+              <h3>Slide #4</h3>
+              <span>Sub-title #4</span>
+            </div>
+            <i class="fa fa-code"></i>
+          </li>
+          <li data-color="#e74c3c">
+            <div>
+              <h3>Slide #5</h3>
+              <span>Sub-title #5</span>
+            </div>
+            <i class="fa fa-microphone-slash"></i>
+          </li>
+        </ul>
+        <!--controls-->
+        <div class="btns" id="next"><i class="fa fa-arrow-right"></i></div>
+        <div class="btns" id="previous"><i class="fa fa-arrow-left"></i></div>
+        <div id="counter"></div>
+        <div id="pagination-wrap">
+          <ul></ul>
+        </div>
+        <!--controls-->
+      </div>
+    </div>
+  </body>
+</html>
