@@ -1,5 +1,9 @@
 class NodeCollection extends Array {
-  // jQuery methods will exist in this class, returned by the $ function
+  width(value) {
+    if (!value) return this[0].offsetWidth;
+    this.forEach((node) => (node.offsetWidth = value));
+    return value; // I'm only guessing this is what passing a new width would return
+  }
 }
 
 function $(selectorOrNode) {

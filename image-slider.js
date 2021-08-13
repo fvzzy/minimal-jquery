@@ -3,11 +3,10 @@ var pos = 0;
 //number of slides
 var totalSlides = $("#slider-wrap ul li").length;
 
-console.log(totalSlides);
-console.log($(document));
-
 //get the slide width
-// var sliderWidth = $("#slider-wrap").width();
+var sliderWidth = $("#slider-wrap").width();
+
+console.log(sliderWidth);
 
 // $(document).ready(function () {
 //   /*****************
