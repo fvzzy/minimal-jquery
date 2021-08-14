@@ -2,7 +2,9 @@
 
 A minimal implementation of jQuery in TypeScript.
 
-A learning exercise with a limited feature set, and support only for modern browsers. Tested only in Chrome 92. Implements:
+A learning exercise with a limited feature set, and support only for modern browsers. Tested only in Chrome (v92).
+
+Implements:
 
 - `$()` (element collection selector)
 - `.ready()`
