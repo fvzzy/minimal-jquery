@@ -12,6 +12,16 @@ class ElementCollection extends Array<HTMLElement> {
     }
   }
 
+  on(event: keyof HTMLElementEventMap, handler: Function) {
+    this.forEach((element) =>
+      element.addEventListener(event, (evt: Event) => handler(evt))
+    );
+  }
+
+  click(handler: Function) {
+    this.on("click", handler);
+  }
+
   width(value: Number | undefined) {
     if (!value) {
       return this[0].offsetWidth;

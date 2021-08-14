@@ -6,6 +6,8 @@ A learning exercise with a limited feature set, and support only for modern brow
 
 - `$()` (element collection selector)
 - `.ready()`
+- `.on()`
+- `.click()`
 - `.width()`
 
 Uses code borrowed from a [popular image slider written by André Cortellini](https://codepen.io/AndreCortellini/pen/kxwmj) to test the implementation.
