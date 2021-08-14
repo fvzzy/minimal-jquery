@@ -6,9 +6,10 @@ var totalSlides = $("#slider-wrap ul li").length;
 //get the slide width
 var sliderWidth = $("#slider-wrap").width();
 
-console.log(sliderWidth);
+$(document).ready(function () {
+  console.log("ready");
+});
 
-// $(document).ready(function () {
 //   /*****************
 // 	 BUILD THE SLIDER
 // 	*****************/
