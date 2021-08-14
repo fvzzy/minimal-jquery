@@ -42,3 +42,7 @@ function $(selectorOrElement: String | HTMLElement) {
     return new ElementCollection(element as HTMLElement);
   }
 }
+
+$.each = function (elementCollection: ElementCollection, callback: Function) {
+  elementCollection.forEach((element) => callback.bind(element)());
+};

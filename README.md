@@ -6,6 +6,7 @@ A learning exercise with a limited feature set, and support only for modern brow
 
 - `$()` (element collection selector)
 - `.ready()`
+- `$.each()` (operates over element collection in args)
 - `.on()`
 - `.click()`
 - `.width()`
