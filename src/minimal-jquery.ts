@@ -12,7 +12,7 @@ class ElementCollection extends Array<HTMLElement> {
     }
   }
 
-  width(value: number | undefined) {
+  width(value: Number | undefined) {
     if (!value) {
       return this[0].offsetWidth;
     }
