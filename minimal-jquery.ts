@@ -81,6 +81,13 @@ class ElementCollection extends Array<HTMLElement> {
 function $(selectorOrElement: String | HTMLElement) {
   if (typeof selectorOrElement === "string") {
     const selector = selectorOrElement;
+    const eqSelectorRegex = new RegExp(/^(.*):eq\((\d)\)$/);
+    if (eqSelectorRegex.test(selector)) {
+      const match = selector.match(eqSelectorRegex);
+      return new ElementCollection(
+        document.querySelectorAll<HTMLElement>(match![1])[Number(match![2])]
+      );
+    }
     return new ElementCollection(
       ...document.querySelectorAll<HTMLElement>(selector)
     );

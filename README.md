@@ -9,6 +9,7 @@ Implements:
 - `$()` (element collection selector)
 - `.ready()`
 - `$.each()` (operates over element collection in args)
+- `:eq()` Selector
 - `.on()`
 - `.click()`
 - `.hover()`
