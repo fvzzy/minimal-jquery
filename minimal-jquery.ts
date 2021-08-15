@@ -14,7 +14,9 @@ class ElementCollection extends Array<HTMLElement> {
 
   on(event: keyof HTMLElementEventMap, handler: Function) {
     this.forEach((element) =>
-      element.addEventListener(event, (evt: Event) => handler(evt))
+      element.addEventListener(event, (evt: Event) =>
+        handler.bind(element)(evt)
+      )
     );
   }
 
