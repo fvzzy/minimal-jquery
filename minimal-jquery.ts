@@ -24,6 +24,11 @@ class ElementCollection extends Array<HTMLElement> {
     this.on("click", handler);
   }
 
+  hover(handlerIn: Function, handlerOut: Function) {
+    this.on("mouseenter", handlerIn);
+    this.on("mouseleave", handlerOut);
+  }
+
   width(value: Number | undefined) {
     if (!value) {
       return this[0].offsetWidth;
