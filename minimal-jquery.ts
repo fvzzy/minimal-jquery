@@ -54,10 +54,12 @@ class ElementCollection extends Array<HTMLElement> {
         .getComputedStyle(this[0], null)
         .getPropertyValue(propertyName);
     }
+
     this.forEach((element) => {
-      // TODO: have this method dynamically add units if the property
-      // is a position, and the value is unitless
-      element.style.setProperty(propertyName, value.toString());
+      element.style.setProperty(
+        propertyName,
+        this._formatPropertyValue(propertyName, value)
+      );
     });
     return this;
   }
@@ -86,6 +88,12 @@ class ElementCollection extends Array<HTMLElement> {
 
   width(value?: Number) {
     return this.css("width", value ? `${value}px` : undefined);
+  _formatPropertyValue(propertyName: String, value: String) {
+    // an example list of style properties that might require units
+    const measurements = ["top", "left", "bottom", "right", "width", "height"];
+    return measurements.indexOf(propertyName.toString()) !== -1
+      ? `${parseInt(value.toString())}px`
+      : value.toString();
   }
 }
 
