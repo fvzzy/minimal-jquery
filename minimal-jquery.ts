@@ -50,9 +50,15 @@ class ElementCollection extends Array<HTMLElement> {
     // using "any" here as I don't believe there's a default bundled
     // collection of valid CSS properties to reference
     if (!value) {
-      return this[0].style[propertyName];
+      return window
+        .getComputedStyle(this[0], null)
+        .getPropertyValue(propertyName);
     }
-    this.forEach((element) => (element.style[propertyName] = value.toString()));
+    this.forEach((element) => {
+      // TODO: have this method dynamically add units if the property
+      // is a position, and the value is unitless
+      element.style.setProperty(propertyName, value.toString());
+    });
     return this;
   }
 
