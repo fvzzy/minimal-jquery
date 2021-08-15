@@ -15,7 +15,7 @@ class ElementCollection extends Array<HTMLElement> {
   on(event: keyof HTMLElementEventMap, handler: Function) {
     this.forEach((element) =>
       element.addEventListener(event, (evt: Event) =>
-        handler.bind(element)(evt)
+        handler.call(element, evt)
       )
     );
   }
@@ -46,5 +46,5 @@ function $(selectorOrElement: String | HTMLElement) {
 }
 
 $.each = function (elementCollection: ElementCollection, callback: Function) {
-  elementCollection.forEach((element) => callback.bind(element)());
+  elementCollection.forEach((element) => callback.call(element));
 };
