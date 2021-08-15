@@ -78,12 +78,8 @@ class ElementCollection extends Array<HTMLElement> {
     return this;
   }
 
-  width(value: Number | undefined) {
-    if (!value) {
-      return this[0].offsetWidth;
-    }
-    this.forEach((element) => (element.style.width = `${value}px`));
-    return value; // I'm only guessing this is what passing a new width would return
+  width(value?: Number) {
+    return this.css("width", value ? `${value}px` : undefined);
   }
 }
 
