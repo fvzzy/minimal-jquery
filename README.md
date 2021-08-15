@@ -13,6 +13,7 @@ Implements:
 - `.on()`
 - `.click()`
 - `.hover()`
+- `.append()`
 - `.html()`
 - `.css()`
 - `.attr()`

@@ -37,6 +37,15 @@ class ElementCollection extends Array<HTMLElement> {
     return this;
   }
 
+  append(content: HTMLElement | String) {
+    if (content instanceof HTMLElement) {
+      this.forEach((element) => element.appendChild(content));
+    } else {
+      this.forEach((element) => (element.innerHTML += content));
+    }
+    return this;
+  }
+
   css(propertyName: any, value: String) {
     // using "any" here as I don't believe there's a default bundled
     // collection of valid CSS properties to reference
