@@ -87,7 +87,14 @@ class ElementCollection extends Array<HTMLElement> {
   }
 
   width(value?: Number) {
-    return this.css("width", value ? `${value}px` : undefined);
+    if (!value) {
+      return parseInt(
+        window.getComputedStyle(this[0], null).getPropertyValue("width")
+      );
+    }
+    return this.css("width", value.toString());
+  }
+
   _formatPropertyValue(propertyName: String, value: String) {
     // an example list of style properties that might require units
     const measurements = ["top", "left", "bottom", "right", "width", "height"];
