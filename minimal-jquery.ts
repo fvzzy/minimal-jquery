@@ -46,7 +46,7 @@ class ElementCollection extends Array<HTMLElement> {
     return this;
   }
 
-  css(propertyName: any, value: String) {
+  css(propertyName: any, value?: String) {
     // using "any" here as I don't believe there's a default bundled
     // collection of valid CSS properties to reference
     if (!value) {
@@ -56,7 +56,7 @@ class ElementCollection extends Array<HTMLElement> {
     return this;
   }
 
-  attr(attributeName: any, value: String) {
+  attr(attributeName: any, value?: String) {
     if (!value) {
       return this[0].getAttribute(attributeName);
     }
