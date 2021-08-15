@@ -12,6 +12,11 @@ Implements:
 - `.on()`
 - `.click()`
 - `.hover()`
+- `.html()`
+- `.css()`
+- `.attr()`
+- `.addClass()`
+- `.removeClass()`
 - `.width()`
 
 Uses code borrowed from a [popular image slider written by André Cortellini](https://codepen.io/AndreCortellini/pen/kxwmj) to test the implementation.

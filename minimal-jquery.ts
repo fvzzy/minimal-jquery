@@ -29,6 +29,46 @@ class ElementCollection extends Array<HTMLElement> {
     this.on("mouseleave", handlerOut);
   }
 
+  html(htmlString: String) {
+    if (!htmlString) {
+      return this[0].innerHTML;
+    }
+    this.forEach((element) => (element.innerHTML = htmlString.toString()));
+    return this;
+  }
+
+  css(propertyName: any, value: String) {
+    // using "any" here as I don't believe there's a default bundled
+    // collection of valid CSS properties to reference
+    if (!value) {
+      return this[0].style[propertyName];
+    }
+    this.forEach((element) => (element.style[propertyName] = value.toString()));
+    return this;
+  }
+
+  attr(attributeName: any, value: String) {
+    if (!value) {
+      return this[0].getAttribute(attributeName);
+    }
+    this.forEach((element) =>
+      element.setAttribute(attributeName, value.toString())
+    );
+    return this;
+  }
+
+  addClass(className: String) {
+    this.forEach((element) => {
+      element.classList.add(className.toString());
+    });
+    return this;
+  }
+
+  removeClass(className: String) {
+    this.forEach((element) => element.classList.remove(className.toString()));
+    return this;
+  }
+
   width(value: Number | undefined) {
     if (!value) {
       return this[0].offsetWidth;
